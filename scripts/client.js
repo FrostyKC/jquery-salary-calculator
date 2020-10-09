@@ -28,5 +28,22 @@ function clickSubmit() {
     annualSalary,
   };
   employeeList.push(employee);
-  console.log(employeeList);
+  render();
+}
+
+function render() {
+  $('.js-employeeList').empty();
+  for (let i = 0; i < employeeList.length; i++) {
+    const employeeInfo = employeeList[i];
+
+    $('.js-employeeList').append(
+      `<tr>
+        <td>${employeeInfo.firstName}</td>
+        <td>${employeeInfo.lastName}</td>
+        <td>${employeeInfo.idNumber}</td>
+        <td>${employeeInfo.jobTitle}</td>
+        <td>${employeeInfo.annualSalary}</td>
+      </tr>`
+    );
+  }
 }
