@@ -5,21 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weekend Project 1</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="client.js" type="text/javascript"></script>
+    <script src="scripts/client.js" type="text/javascript"></script>
     <link rel="stylesheet" href="stylesheet/style.css" />
   </head>
-
-  <!-- // The application should have an input form that collects _employee first name, last name, ID number, job title, annual salary_. -->
-
   <body>
-    <h1>This is my project</h1>
+    <header>
+      <h1>This is my project</h1>
+    </header>
 
     <div>
-      <input type="text" placeholder="First Name" />
-      <input type="text" placeholder="Last Name" />
-      <input type="number" placeholder="ID Number" />
-      <input type="text" placeholder="Job Title" />
-      <input type="number" placeholder="Annual Salary" />
+      <input class="js-firstName" type="text" placeholder="First Name" />
+      <input class="js-lastName" type="text" placeholder="Last Name" />
+      <input class="js-idNumber" type="number" placeholder="ID Number" />
+      <input class="js-jobTitle" type="text" placeholder="Job Title" />
+      <input
+        class="js-annualSalary"
+        type="number"
+        placeholder="Annual Salary"
+      />
+
+      <button class="js-employeeSubmit">Submit</button>
     </div>
   </body>
 </html>
