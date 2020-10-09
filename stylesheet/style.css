@@ -14,3 +14,7 @@ body {
 .container {
   padding: 20px;
 }
+
+.total {
+  text-align: right;
+}
