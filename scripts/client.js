@@ -1,3 +1,7 @@
+console.log('Weekend Project');
+
+const employeeList = [];
+
 $(document).ready(goodToGo);
 
 //A 'Submit' button should collect the form information, store the information to calculate monthly costs,
@@ -14,7 +18,6 @@ function clickSubmit() {
   const idNumber = $('.js-idNumber').val();
   const jobTitle = $('.js-jobTitle').val();
   const annualSalary = $('.js-annualSalary').val();
-  console.log(firstName, lastName, idNumber, jobTitle, annualSalary);
 
   // store input info
   const employee = {
@@ -24,5 +27,6 @@ function clickSubmit() {
     jobTitle,
     annualSalary,
   };
-  console.log(employee);
+  employeeList.push(employee);
+  console.log(employeeList);
 }
