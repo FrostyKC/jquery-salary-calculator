@@ -4,13 +4,13 @@ const employeeList = [];
 
 $(document).ready(goodToGo);
 
-//A 'Submit' button should collect the form information, store the information to calculate monthly costs,
-// append information to the DOM and clear the input fields.
+// Using the stored information, calculate monthly costs and append this to the to DOM.
 
 function goodToGo() {
   console.log('ready');
   $('.js-employeeSubmit').on('click', clickSubmit);
 }
+
 function clickSubmit() {
   // capture input info
   const firstName = $('.js-firstName').val();
@@ -28,13 +28,16 @@ function clickSubmit() {
     annualSalary,
   };
   employeeList.push(employee);
-  // show input info to dom
+  // show input info to dom and clears input values
   render();
   clickClear();
 }
 
 function render() {
+  // clears the list
   $('.js-employeeList').empty();
+
+  // Showing each employee and their values on the list
   for (let i = 0; i < employeeList.length; i++) {
     const employeeInfo = employeeList[i];
 
@@ -45,12 +48,14 @@ function render() {
         <td>${employeeInfo.idNumber}</td>
         <td>${employeeInfo.jobTitle}</td>
         <td>${employeeInfo.annualSalary}</td>
+        <td><button>Delete</button></td>
       </tr>`
     );
   }
 }
 
 function clickClear() {
+  // Clears the input values when button is clicked
   $('.container input[type="text"]').val('');
   $('.container input[type="number"]').val('');
 }
