@@ -15,4 +15,14 @@ function clickSubmit() {
   const jobTitle = $('.js-jobTitle').val();
   const annualSalary = $('.js-annualSalary').val();
   console.log(firstName, lastName, idNumber, jobTitle, annualSalary);
+
+  // store input info
+  const employee = {
+    firstName,
+    lastName,
+    idNumber,
+    jobTitle,
+    annualSalary,
+  };
+  console.log(employee);
 }
