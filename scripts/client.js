@@ -28,7 +28,9 @@ function clickSubmit() {
     annualSalary,
   };
   employeeList.push(employee);
+  // show input info to dom
   render();
+  clickClear();
 }
 
 function render() {
@@ -46,4 +48,9 @@ function render() {
       </tr>`
     );
   }
+}
+
+function clickClear() {
+  $('.container input[type="text"]').val('');
+  $('.container input[type="number"]').val('');
 }
