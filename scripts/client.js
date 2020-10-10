@@ -30,6 +30,7 @@ function clickSubmit() {
   employeeList.push(employee);
   // show input info to dom and clears input values
   render();
+  calcMonthly();
   clickClear();
 }
 
@@ -58,4 +59,16 @@ function clickClear() {
   // Clears the input values when button is clicked
   $('.container input[type="text"]').val('');
   $('.container input[type="number"]').val('');
+}
+
+function calcMonthly() {
+  // Calculates the annual salaries to show monthly salary
+  let monthlyTotal = 0;
+
+  for (let i = 0; i < employeeList.length; i++) {
+    const employeeInfo = employeeList[i];
+    monthlyTotal += parseInt(employeeInfo.annualSalary);
+  }
+  monthlyTotal /= 12;
+  $('.js-totalMonthly').text(monthlyTotal);
 }

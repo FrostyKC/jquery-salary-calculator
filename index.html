@@ -30,13 +30,12 @@
     <div class="container">
       <table class="employeeTable">
         <thead>
-          <tr>
+          <tr class="tableHead">
             <td>First Name</td>
             <td>Last Name</td>
             <td>ID</td>
             <td>Job Title</td>
-            <td>Annual Salary</td>
-            <td></td>
+            <td colspan="2">Annual Salary</td>
           </tr>
         </thead>
         <tbody class="js-employeeList">
@@ -44,7 +43,9 @@
         </tbody>
         <tfoot>
           <tr>
-            <td class="total" colspan="6">Total Monthly: $0</td>
+            <td class="total" colspan="6">
+              Total Monthly: $<span class="js-totalMonthly">0</span>
+            </td>
           </tr>
         </tfoot>
       </table>
