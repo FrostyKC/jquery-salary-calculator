@@ -14,7 +14,6 @@ h2 {
 
 .js-employeeList tr:nth-child(even) {
   background-color: lightgray;
-  color: white;
 }
 
 .employeeTable td {
