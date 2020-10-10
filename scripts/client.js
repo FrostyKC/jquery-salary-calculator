@@ -1,14 +1,13 @@
 console.log('Weekend Project');
 
-const employeeList = [];
+let employeeList = [];
 
 $(document).ready(goodToGo);
-
-// If the total monthly cost exceeds $20,000, add a red background color to the total monthly cost.
 
 function goodToGo() {
   console.log('ready');
   $('.js-employeeSubmit').on('click', clickSubmit);
+  $('.js-employeeList').on('click', '.js-deleteButton', deleteEmployee);
 }
 
 function clickSubmit() {
@@ -28,9 +27,11 @@ function clickSubmit() {
     annualSalary,
   };
   employeeList.push(employee);
-  // show input info to dom and clears input values
+  //shows each employee added to table with input values
   render();
+  //calculates the monthly salaries from input given, will turn red if over limit
   calcMonthly();
+  //clears the input values on submit
   clickClear();
 }
 
@@ -49,10 +50,18 @@ function render() {
         <td>${employeeInfo.idNumber}</td>
         <td>${employeeInfo.jobTitle}</td>
         <td>${employeeInfo.annualSalary}</td>
-        <td><button>Delete</button></td>
+        <td><button class='js-deleteButton' data-index='${i}'>Delete</button></td>
       </tr>`
     );
   }
+}
+
+function deleteEmployee() {
+  // deletes employee and their values
+  let index = $(this).data('index');
+  employeeList.splice(index, 1);
+  render();
+  calcMonthly();
 }
 
 function clickClear() {
@@ -73,7 +82,7 @@ function calcMonthly() {
   console.log('in calcMonthly', monthlyTotal);
   $('.js-totalMonthly').text(monthlyTotal);
 
-  // if monthlytotal is more than 20k then adds red background to the amount
+  // if monthly total is more than 20k then adds red background to the amount
   if (monthlyTotal > 20000) {
     $('.js-totalMonthly').css('background-color', 'red');
   }
