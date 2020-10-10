@@ -79,7 +79,6 @@ function calcMonthly() {
     monthlyTotal += parseInt(employeeInfo.annualSalary);
   }
   monthlyTotal /= 12;
-  console.log('in calcMonthly', monthlyTotal);
   $('.js-totalMonthly').text(monthlyTotal);
 
   // if monthly total is more than 20k then adds red background to the amount
