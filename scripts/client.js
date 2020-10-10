@@ -4,7 +4,7 @@ const employeeList = [];
 
 $(document).ready(goodToGo);
 
-// Using the stored information, calculate monthly costs and append this to the to DOM.
+// If the total monthly cost exceeds $20,000, add a red background color to the total monthly cost.
 
 function goodToGo() {
   console.log('ready');
@@ -70,5 +70,11 @@ function calcMonthly() {
     monthlyTotal += parseInt(employeeInfo.annualSalary);
   }
   monthlyTotal /= 12;
+  console.log('in calcMonthly', monthlyTotal);
   $('.js-totalMonthly').text(monthlyTotal);
+
+  // if monthlytotal is more than 20k then adds red background to the amount
+  if (monthlyTotal > 20000) {
+    $('.js-totalMonthly').css('background-color', 'red');
+  }
 }
