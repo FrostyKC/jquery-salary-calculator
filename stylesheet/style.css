@@ -1,9 +1,20 @@
+html,
 body {
-  background-color: aqua;
+  margin: 0;
+}
+
+h2 {
+  margin-left: 20px;
+  margin-bottom: 0px;
 }
 
 .employeeTable {
   border-collapse: collapse;
+}
+
+.js-employeeList tr:nth-child(even) {
+  background-color: lightgray;
+  color: white;
 }
 
 .employeeTable td {
@@ -17,8 +28,19 @@ body {
 
 .total {
   text-align: right;
+  background-color: gray;
+  color: white;
 }
 
 .tableHead {
   text-align: center;
+  background-color: gray;
+  color: white;
+}
+
+.head {
+  padding: 15px 25px;
+  background-color: gray;
+  text-align: center;
+  margin: 0;
 }

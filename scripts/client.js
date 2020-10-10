@@ -84,6 +84,8 @@ function calcMonthly() {
 
   // if monthly total is more than 20k then adds red background to the amount
   if (monthlyTotal > 20000) {
-    $('.js-totalMonthly').css('background-color', 'red');
+    $('.total').css('background-color', 'red');
+  } else {
+    $('.total').css('background-color', 'gray');
   }
 }
