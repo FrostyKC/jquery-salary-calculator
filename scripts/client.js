@@ -29,8 +29,6 @@ function clickSubmit() {
   employeeList.push(employee);
   //shows each employee added to table with input values
   render();
-  //calculates the monthly salaries from input given, will turn red if over limit
-  calcMonthly();
   //clears the input values on submit
   clickClear();
 }
@@ -54,6 +52,7 @@ function render() {
       </tr>`
     );
   }
+  calcMonthly();
 }
 
 function deleteEmployee() {
@@ -61,7 +60,6 @@ function deleteEmployee() {
   let index = $(this).data('index');
   employeeList.splice(index, 1);
   render();
-  calcMonthly();
 }
 
 function clickClear() {
